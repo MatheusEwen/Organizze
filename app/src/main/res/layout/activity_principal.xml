@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.PrincipalActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.Organizze.AppBarOverlay"
+        app:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/Theme.Organizze.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include
+        android:id="@+id/calendarViewp"
+        layout="@layout/content_principal" />
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="10dp"
+        fab:menu_icon="@drawable/ic_baseline_add_24"
+        app:menu_colorNormal="#E36868"
+        app:menu_colorPressed="#E86565">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_receita"
+            android:onClick="adicionarReceita"
+            fab:fab_colorNormal="#FF00D39E"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            fab:fab_label="Receita"
+            fab:fab_size="mini"/>
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/menu_despesa"
+            android:layout_width="wrap_content"
+            android:onClick="adicionarDespesa"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            fab:fab_colorNormal="#FFFF706A"
+            fab:fab_label="Despesa"
+            fab:fab_size="mini"/>
+
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
